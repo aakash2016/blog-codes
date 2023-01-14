@@ -4,7 +4,7 @@
 import cv2
 import numpy as np
 import tensorflow as tf
-from inference.oneEuro import OneEuroFilter
+from motion_detection.inference.oneEuro import OneEuroFilter
 
 import matplotlib.animation as animation
 import matplotlib.pyplot as plt
@@ -13,7 +13,7 @@ plt.interactive(True)
 # Initialize the TFLite interpreter
 num_kps = 17
 input_size = 256
-interpreter = tf.lite.Interpreter(model_path="tflite_folder/thunder_model.tflite")
+interpreter = tf.lite.Interpreter(model_path="motion_detection/tflite_folder/thunder_model.tflite")
 interpreter.allocate_tensors()
 
 # Color library

@@ -2,12 +2,12 @@
 import cv2
 import numpy as np
 import tensorflow as tf
-from scipy import signal, zeros, random
+from scipy import signal
 
 # Initialize the TFLite interpreter
 num_kps = 17
 input_size = 256
-interpreter = tf.lite.Interpreter(model_path="tflite_folder/thunder_model.tflite")
+interpreter = tf.lite.Interpreter(model_path="motion_detection/tflite_folder/thunder_model.tflite")
 interpreter.allocate_tensors()
 
 # Color library
@@ -46,9 +46,10 @@ def preprocess_kps(kps, height, width):
         kps[i][0] = temp * width
     return kps
 
-def draw_pose(image, keypoints, radius=2):
-    height, width, channel = image.shape
-    kps = preprocess_kps(keypoints, height, width)
+def draw_pose(image, kps, radius=2, preprocess=True):
+    if preprocess:
+        height, width, channel = image.shape
+        kps = preprocess_kps(kps, height, width)
     for c in kps:
         x, y, s = c
         if s > 0.2:
@@ -195,6 +196,7 @@ def main(path, lpf):
 
     cap.release()
     cv2.destroyAllWindows()
+
 
 if __name__ == "__main__":
     import argparse

@@ -1,0 +1,6 @@
+*.jpg
+*.mp4
+*.json
+.idea/
+.DS_Store
+__pycache__
