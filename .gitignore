@@ -4,4 +4,5 @@
 .idea/
 .DS_Store
 __pycache__
-shadowfier
+*/testcases/
+*/results/
