@@ -1,0 +1,3 @@
+[submodule "constrained-optimization"]
+	path = constrained-optimization
+	url = git@github.com:aakash2016/constrained-optimization.git
