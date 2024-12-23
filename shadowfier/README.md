@@ -1,4 +1,5 @@
 # Shadowfier
+The detailed approach can be found here: [link](https://medium.com/gitconnected/shadowfier-407df70c8ae8)
 
 ### Installation
 1. do ``cd shadowfier``
